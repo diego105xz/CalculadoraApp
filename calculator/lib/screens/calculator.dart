@@ -1,6 +1,7 @@
 import 'package:calculator/components/display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:calculator/components/keyboard.dart';
 
 class Calculator extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class Calculator extends StatelessWidget {
       home: Column(
         children: <Widget>[
           Display('123.45'),
-          Text('Keyboard'),
+          Keyboard(),
         ],
       ),
     );
