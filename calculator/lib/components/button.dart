@@ -2,30 +2,34 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  static const DARK = Color.fromARGB(82, 82, 82, 1);
-  static const DEFAULT = Color.fromARGB(105, 105, 105, 1);
-  static const OPERATION = Color.fromARGB(250, 158, 13, 1);
+  static const DARK = Color.fromRGBO(82, 82, 82, 1);
+  static const DEFAULT = Color.fromRGBO(112, 112, 112, 1);
+  static const OPERATION = Color.fromRGBO(250, 158, 13, 1);
 
   final String text;
   final bool big;
   final Color color;
+  final void Function(String) cb;
 
   Button({
     @required this.text,
     this.big = false,
     this.color = DARK,
+    @required this.cb,
   });
 
   Button.big({
     @required this.text,
     this.big = true,
     this.color = DEFAULT,
+    @required this.cb,
   });
 
   Button.operation({
     @required this.text,
     this.big = false,
     this.color = OPERATION,
+    @required this.cb,
   });
 
   @override
@@ -42,7 +46,9 @@ class Button extends StatelessWidget {
             fontWeight: FontWeight.w200,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          cb(text);
+        },
       ),
     );
   }
