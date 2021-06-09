@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
   Button({
     @required this.text,
     this.big = false,
-    this.color = DARK,
+    this.color = DEFAULT,
     @required this.cb,
   });
 
@@ -46,9 +46,7 @@ class Button extends StatelessWidget {
             fontWeight: FontWeight.w200,
           ),
         ),
-        onPressed: () {
-          cb(text);
-        },
+        onPressed: () => cb(text),
       ),
     );
   }
